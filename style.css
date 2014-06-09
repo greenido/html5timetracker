@@ -194,7 +194,7 @@ body.new .btn-start {
 }
 body.new #welcome {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   width: 640px;
   margin: -85px 0 0 -320px;
