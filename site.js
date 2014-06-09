@@ -45,7 +45,7 @@ $(document).ready(function() {
   // Get stuff from localStorage
   if (typeof (Storage) !== undefined) {
     for (var key in localStorage) {
-      if (key == "count" || key.indexOf("task") === -1) {
+      if (key === "count" || key.indexOf("task") === -1) {
         continue;
       }
       $("#done").prepend(localStorage.getItem(key));
@@ -124,7 +124,7 @@ $(document).ready(function() {
     return false;
   });
 
-  // user decides he"s done
+  // user decides she is done
   $("#end").on("click", function() {
     worked = $("#timer span").countdown("getTimes");
     $("#timer span").countdown("option", {until: 0, onExpiry: logTime});
@@ -171,6 +171,12 @@ $(document).ready(function() {
     // add localStorage keys
     localStorage.setItem("task" + ("0" + count).slice(-2), text);
 
+    var jtext = "'task': 'Task" + ("0" + count).slice(-2) + "', 'when': '" + startHour + ":" + startMin + " - " + hour + ":" + min +
+            "', 'description': '" + task + "', 'effort': '" +
+            (cycle - timeWorked) + " minutes'";
+    
+    // Let's save it in another more normal way to work with JS objects.
+    localStorage.setItem("json-mesima" + ("0" + count).slice(-2), jtext);
     // add new task to the top of the list
     $("#done").prepend(text);
     if ($("#new").is(":checked")) {
@@ -187,6 +193,8 @@ $(document).ready(function() {
       var deleteThis = $(this).parent().parent().attr("data-task");
       $(this).parent().parent().remove();
       localStorage.removeItem(deleteThis);
+      var deleteJsonObj = deleteThis.replace("task", "json-mesima");
+      localStorage.removeItem(deleteJsonObj);
     });
   });
   $("#done").on("mouseleave", "li", function() {
@@ -241,4 +249,68 @@ $(document).ready(function() {
     myAudio.pause();
     myAudio.currentTime = 0;
   });
+
+// When the user wish to download all the tasks
+  $("#download").click(function() {
+    // built the obj from our local storage
+    var ourTasks = "";
+    for (var key in localStorage) {
+      if (key.indexOf("json-mesima") === -1) {
+        continue;
+      }
+      ourTasks += "{" + localStorage.getItem(key) + "}";
+      ourTasks += ",";
+    }
+    ourTasks = ourTasks.substring(0, ourTasks.length - 1);
+    ourTasks = ourTasks.replace(/'/g, "\"");
+
+    //let take our tasks obj and pass it to the convert function
+    var tmpJson = "[" + ourTasks + "]";
+    var csv = JSON2CSV(tmpJson);
+    window.open("data:text/csv;charset=utf-8," + escape(csv))
+  });
+
 });
+
+
+//
+// Util fuctions
+//
+function JSON2CSV(objArray) {
+  var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+  var str = '';
+  var line = '';
+  //var head = array[0];
+  for (var index in array[0]) {
+    var value = index + "";
+    line += '"' + value.replace(/"/g, '""') + '",';
+  }
+//         else {
+//            for (var index in array[0]) {
+//                line += index + ',';
+//            }
+//        }
+
+  line = line.slice(0, -1);
+  str += line + '\r\n';
+  for (var i = 0; i < array.length; i++) {
+    var line = '';
+
+    for (var index in array[i]) {
+      var value = array[i][index] + "";
+      line += '"' + value.replace(/"/g, '""') + '",';
+    }
+//        } else {
+//            for (var index in array[i]) {
+//                line += array[i][index] + ',';
+//            }
+//        }
+
+    line = line.slice(0, -1);
+    str += line + '\r\n';
+  }
+  return str;
+
+}
+
+

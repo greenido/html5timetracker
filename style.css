@@ -225,7 +225,7 @@ body.working a {
   border-radius: 2px;
   font-weight: 600;
   opacity: .2;
-  font-size: 15px;
+  font-size: 3em;
 }
 body.working a:hover {
   color: #2ecc71;
@@ -297,7 +297,7 @@ body.log label:first-child {
   display: block;
   font-weight: bold;
   margin: 0 0 18px;
-  float: none;
+  float: right;
 }
 body.log input[type=submit] {
   background: #e74c3c;
@@ -384,6 +384,27 @@ body.list .btn-start {
   box-shadow: 0px 0px 0px 4px #3498db;
   left: 50%;
 }
+
+.btn-download {
+  background: #120331;
+  display: block;
+  font-family: sans-serif;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 0px;
+  width: 200px;
+  font-size: 18px;
+  border-radius: 2px;
+  text-decoration: none;
+  pointer-events: all;
+  position: relative;
+  
+  margin: 0 0 0 -100px;
+  box-shadow: 0px 0px 0px 4px #3498db;
+  left: 50%;
+}
+
 body.list #reset {
   position: absolute;
   pointer-events: all;

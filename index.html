@@ -5,7 +5,8 @@
 	<link rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.countdown.min.js"></script>
-	<script type="text/javascript" src="site.min.js"></script>
+    <!-- Todo: use the min.js version -->
+	<script type="text/javascript" src="site.js"></script>
 </head>
 <body>
 <section id="settings">
@@ -36,7 +37,7 @@
 
 <section id="countdown">
 	<div id="timer"><span></span></div>
-	<a href="" id="end">זה סיימתי</a>
+	<a href="" id="end">זהו סיימתי </a>
 	<a href="" id="cancel">ביטול</a>
 </section>
 
@@ -49,8 +50,12 @@
 		<br>
 		<a href="" id="reset">ניקוי התיעוד</a>
 		<span>את בטוחה ? <a href="" class="confirm">כן </a> <a href="" class="cancel">מה פתאום</a></span>
+        
+        <br>
+        
 	</div>
 	<a href="" class="settings set-cycle">הגדרות</a>
+    <button href="" class="btn-download" id="download">הורד את הנתונים </button>
 </section>
 
 <section id="alert">
@@ -58,8 +63,8 @@
 	<label for="what">&#63; על מה עבדת עד כה  </label>
 	<input type="text" id="what" placeholder="תיאור מלא ומפורט עדיף על שתי מילים" />
 	<br>
-	<label><input type="checkbox" id="new" checked />נתחיל עוד מחזור?</label>
-	<input type="submit" id="submit" value="Submit">
+	<label><input type="checkbox" id="new" checked />&#63; להתחיל עוד משימה</label>
+	<input type="submit" id="submit" value="שמור">
 	</form>
 	<a href="" id="void">ביטול</a>
 	<a href="" class="settings set-next">הגדרות</a>
