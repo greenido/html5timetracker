@@ -153,9 +153,13 @@ $(document).ready(function() {
 
     count++;
     localStorage.count = count;
-
-    myAudio.currentTime = 0;
-    myAudio.pause();
+    try {
+      myAudio.currentTime = 0;
+      myAudio.pause();
+    }
+    catch(err) {
+      console.log("No audio for you. Err:"+err);
+    }
     if (typeof worked[5] !== "number") {
       timeWorked = 0;
     } else {
