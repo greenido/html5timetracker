@@ -13,7 +13,7 @@ More TODOs
   * Add a popup for the start to ask the user for their settings.
   * Change the storage to indexedDB
   * Add an option to export the tasks/events/talks list to google docs.
-
+  * SW - use it to improve performance 
 -------
 
 Demo
