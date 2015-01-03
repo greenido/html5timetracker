@@ -1,0 +1,72 @@
+<html lang="he">
+<head>
+  <meta charset="utf-8" />
+	<title>Time Tracker To Asal</title>
+	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.countdown.min.js"></script>
+    <!-- Todo: use the min.js version -->
+	<script type="text/javascript" src="site.js"></script>
+</head>
+<body>
+<section id="settings">
+	<div class="overlay"></div>
+	<div class="content">
+		<form action="" id="cycle-form" class="settings-form">
+			<label for="cycle">Time for one cycle of work</label>
+			<input type="text" id="cycle" placeholder="30" />
+			<input type="submit" value="Save">
+		</form>
+		<form action="" id="next-form" class="settings-form">
+			<label for="nextCycle">Saved!</label>
+			<input type="text" id="nextCycle" placeholder="30" />
+			<input type="submit" value="Save">
+		</form>
+	</div>
+</section>
+<section id="welcome">
+	
+    <h1>Time Tracker</h1>
+	<p>In few click (here and there) you will have a full log on what you spent your time</p>
+	<a href="" class="btn-start">Let's go!</a>
+	<a href="" class="settings set-cycle">Settings</a>
+    <div id="kids">
+      <img src="https://farm4.staticflickr.com/3797/13819192673_03feae3f8e_c.jpg" width="800" height="600" alt="The boys!">
+    </div>
+</section>
+
+<section id="countdown">
+	<div id="timer"><span></span></div>
+	<a href="" id="end">I'm Done!</a>
+	<a href="" id="cancel">Cancel</a>
+</section>
+
+<section id="list">
+	<ul id="done">
+		
+	</ul>
+	<div id="actions">
+		<a href="" class="btn-start">Let's go to work</a>
+		<br>
+		<a href="" id="reset">Clean log</a>
+		<span>Are you sure?<a href="" class="confirm">Yep</a> <a href="" class="cancel">No</a></span>    
+        <br>
+	</div>
+    <button href="" class="btn-download" id="download">Download the log</button>
+	<a href="" class="settings set-cycle">Settings</a>
+</section>
+
+<section id="alert">
+	<form action="" id="logActivity">
+	<label for="what">On What did you worked?  </label>
+	<input type="text" id="what" placeholder="Give few words that describe your work" />
+	<br>
+	<label><input type="checkbox" id="new" checked />Start another cycle?</label>
+	<input type="submit" id="submit" value="save">
+	</form>
+	<a href="" id="void">Cancel</a>
+	<a href="" class="settings set-next">Settings</a>
+</section>
+
+</body>
+</html>
