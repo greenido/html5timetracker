@@ -1,72 +1,78 @@
 <html lang="he">
 <head>
-  <meta charset="utf-8" />
+	<meta charset="utf-8" />
 	<title>Time Tracker To Asal</title>
 	<link rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.countdown.min.js"></script>
-    <!-- Todo: use the min.js version -->
+	<!-- Todo: use the min.js version -->
 	<script type="text/javascript" src="site.js"></script>
 </head>
 <body>
-<section id="settings">
-	<div class="overlay"></div>
-	<div class="content">
-		<form action="" id="cycle-form" class="settings-form">
-			<label for="cycle">זמן המחזור עבודה</label>
-			<input type="text" id="cycle" placeholder="30" />
-			<input type="submit" value="Save">
-		</form>
-		<form action="" id="next-form" class="settings-form">
-			<label for="nextCycle">זמן מחזור משני</label>
-			<input type="text" id="nextCycle" placeholder="30" />
-			<input type="submit" value="Save">
-		</form>
+	<div id="langs">
+		<a href="index.html" >
+			<img src="imgs/hebrew-flag.png" alt="hebrew icon"></a>
+		<a href="index-en.html" >
+			<img src="imgs/en-flag.png" alt="english icon"></a>
 	</div>
-</section>
-<section id="welcome">
-	
-    <h1>מכשיר קטן למעקב זמן</h1>
-	<p>רק כמה לחיצות ויש לך תיעוד יומי על מה הושקע הזמן</p>
-	<a href="" class="btn-start">יאללה נתחיל</a>
-	<a href="" class="settings set-cycle">הגדרות</a>
-    <div id="kids">
-      <img src="https://farm4.staticflickr.com/3797/13819192673_03feae3f8e_c.jpg" width="800" height="600" alt="The boys!">
-    </div>
-</section>
+	<section id="settings">
+		<div class="overlay"></div>
+		<div class="content">
+			<form action="" id="cycle-form" class="settings-form">
+				<label for="cycle">זמן המחזור עבודה</label>
+				<input type="text" id="cycle" placeholder="30" />
+				<input type="submit" value="Save"></form>
+			<form action="" id="next-form" class="settings-form">
+				<label for="nextCycle">זמן מחזור משני</label>
+				<input type="text" id="nextCycle" placeholder="30" />
+				<input type="submit" value="Save"></form>
+		</div>
+	</section>
+	<section id="welcome">
+		<h1>מכשיר קטן למעקב זמן</h1>
+		<p>רק כמה לחיצות ויש לך תיעוד יומי על מה הושקע הזמן</p>
+		<a href="" class="btn-start">יאללה נתחיל</a>
+		<a href="" class="settings set-cycle">הגדרות</a>
+		<div id="kids">
+			<img src="https://farm4.staticflickr.com/3797/13819192673_03feae3f8e_c.jpg" width="800" height="600" alt="The boys!"></div>
+	</section>
 
-<section id="countdown">
-	<div id="timer"><span></span></div>
-	<a href="" id="end">זהו סיימתי </a>
-	<a href="" id="cancel">ביטול</a>
-</section>
+	<section id="countdown">
+		<div id="timer">
+			<span></span>
+		</div>
+		<a href="" id="end">זהו סיימתי</a>
+		<a href="" id="cancel">ביטול</a>
+	</section>
 
-<section id="list">
-	<ul id="done">
-		
-	</ul>
-	<div id="actions">
-		<a href="" class="btn-start">יאללה לחזור לעבודה</a>
-		<br>
-		<a href="" id="reset">ניקוי התיעוד</a>
-		<span>את בטוחה ? <a href="" class="confirm">כן </a> <a href="" class="cancel">מה פתאום</a></span>    
-        <br>
-	</div>
-    <button href="" class="btn-download" id="download">הורד את הנתונים </button>
-	<a href="" class="settings set-cycle">הגדרות</a>
-</section>
+	<section id="list">
+		<h5>המשימות</h5>
+		<ul id="done"></ul>
+		<div id="actions">
+			<a href="" id="reset">ניקוי התיעוד</a>
+			<span>
+				את בטוחה ?
+				<a href="" class="confirm">כן</a>
+				<a href="" class="cancel">מה פתאום</a>
+			</span>
+			<br></div>
+		<button href="" class="btn-download" id="download">הורד את משימות</button>
+		<a href="" class="settings set-cycle">הגדרות</a>
+	</section>
 
-<section id="alert">
-	<form action="" id="logActivity">
-	<label for="what">&#63; על מה עבדת עד כה  </label>
-	<input type="text" id="what" placeholder="תיאור מלא ומפורט עדיף על שתי מילים" />
-	<br>
-	<label><input type="checkbox" id="new" checked />&#63; להתחיל עוד משימה</label>
-	<input type="submit" id="submit" value="שמור">
-	</form>
-	<a href="" id="void">ביטול</a>
-	<a href="" class="settings set-next">הגדרות</a>
-</section>
+	<section id="alert">
+		<form action="" id="logActivity">
+			<label for="what">&#63; על מה עבדת</label>
+			<input type="text" id="what" placeholder="תיאור מלא ומפורט" />
+			<br>
+			<label>
+				<input type="checkbox" id="new" checked />
+				&#63; עוד משימה
+			</label>
+			<input type="submit" id="submit" value="שמור"></form>
+		<a href="" id="void">ביטול</a>
+		<a href="" class="settings set-next">הגדרות</a>
+	</section>
 
 </body>
 </html>

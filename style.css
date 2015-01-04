@@ -246,8 +246,8 @@ body.working a#cancel {
   background: darkblue;
   position: fixed;
   font-weight: normal;
-  top: 20px;
-  right: 20px;
+  top: 2em;
+  right: .7em;
   border-radius: 1em;
 }
 body.working a#cancel:hover {
@@ -604,4 +604,15 @@ body.list p small {
 @keyframes boom {
   100% { opacity: 1;}
   0% {opacity: 0;}
+}
+
+
+div#langs {
+  position: fixed;
+  right: 5%;
+  top: 1%;
+  
+}
+#langs a {
+  text-decoration: none;
 }
