@@ -427,7 +427,7 @@ body.list .btn-start {
   font-size: 100%;
   position: fixed;
   bottom: 20px;
-  right: 15%;
+  right: 5%;
 }
 .btn-download:hover {
   border: 2px solid #fff;
