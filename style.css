@@ -627,6 +627,9 @@ div#langs {
   right: 7%;
 }
 
+/*
+* For future customization for mobile (=phone) devices
+*/
 @media only screen and (max-device-width: 320px) {
   
 }
