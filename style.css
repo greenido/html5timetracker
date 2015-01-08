@@ -54,7 +54,7 @@ body.settings-open.log #cycle-form {
   display: none;
 }
 #kids {
-
+  border-radius: 20px;
   padding: 0.5em;
   position: relative;
   right: 13%;
