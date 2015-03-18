@@ -3,7 +3,7 @@ html5timetracker in hebrew
 
 This is a web app that try to let you use [Pomodoro Technique](http://en.wikipedia.org/wiki/Pomodoro_Technique).
 In other words, it's giving you option to be more productive and run your own 'personal sprints'.
-Good luck.
+Good luck and keep the most valuable resource - your time.
 
 More TODOs
 ==========
