@@ -14,7 +14,6 @@ $(document).ready(function() {
     cycle = minToWork;
     nextCycle = cycle;
   }
-
   var cycle;
   var count = 0;
 
@@ -81,7 +80,8 @@ $(document).ready(function() {
     this.value = this.value.replace(/[^0-9]/g, "");
     nextCycle = $(this).val();
   });
-  // do magic when the cycle length form is submitted
+
+  // Do the magic when the cycle length form is submitted
   $("#cycle-form").submit(function() {
     if ($("#cycle").val() === "") {
       $("#cycle").val("30");
@@ -95,6 +95,7 @@ $(document).ready(function() {
     $("body").removeClass("settings-open");
     return false;
   });
+
   // magic when the next cycle length form is submitted
   $("#next-form").submit(function() {
     localStorage.setItem("nextCycle", nextCycle);
@@ -102,6 +103,7 @@ $(document).ready(function() {
     $("body").removeClass("settings-open");
     return false;
   });
+
   // close dropdown when clicked anywhere but inside
   $("#settings .overlay").on("click", function() {
     $("body").removeClass("settings-open");
@@ -165,7 +167,10 @@ $(document).ready(function() {
     } else {
       timeWorked = worked[5];
     }
-    var text = "<li data-task='" + "task" + ("0" + count).slice(-2) + "'><h6>" + startHour + ":" + startMin + " - " + hour + ":" + min + "</h6><br /><p>" + task + "<small>" + (cycle - timeWorked) + " minutes</p></li>";
+    var text = "<li data-task='" + "task" + ("0" + count).slice(-2) +
+      "'><h6>" + startHour + ":" + startMin + " - " + hour + ":" + min +
+      "</h6><br /><p>" + task + "<small>" + (cycle - timeWorked) +
+      " minutes</p></li>";
     // if these differ, get them to be the same
     if (nextCycle !== cycle) {
       cycle = localStorage.nextCycle;
