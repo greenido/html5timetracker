@@ -186,6 +186,7 @@ $(document).ready(function() {
     
     // Let's save it in another more normal way to work with JS objects.
     localStorage.setItem("json-mesima" + ("0" + count).slice(-2), jtext);
+
     // add new task to the top of the list
     $("#done").prepend(text);
     if ($("#new").is(":checked")) {
@@ -196,6 +197,7 @@ $(document).ready(function() {
     }
     return false;
   });
+
   $("#done").on("mouseenter", "li[data-task]", function() {
     $(this).find("p").prepend("<span class='delete'>x</span>");
     $(this).find(".delete").on("click", function() {
@@ -259,7 +261,7 @@ $(document).ready(function() {
     myAudio.currentTime = 0;
   });
 
-// When the user wish to download all the tasks
+  // When the user wish to download all the tasks
   $("#download").click(function() {
     // built the obj from our local storage
     var ourTasks = "";
@@ -283,7 +285,7 @@ $(document).ready(function() {
 
 
 //
-// Util fuctions
+// Util functions
 //
 function JSON2CSV(objArray) {
   var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
