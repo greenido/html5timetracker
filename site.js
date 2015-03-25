@@ -285,7 +285,7 @@ $(document).ready(function() {
 
 
 //
-// Util functions
+// Export JSON obj to CSV
 //
 function JSON2CSV(objArray) {
   var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
@@ -296,11 +296,6 @@ function JSON2CSV(objArray) {
     var value = index + "";
     line += '"' + value.replace(/"/g, '""') + '",';
   }
-//         else {
-//            for (var index in array[0]) {
-//                line += index + ',';
-//            }
-//        }
 
   line = line.slice(0, -1);
   str += line + '\r\n';
@@ -311,11 +306,6 @@ function JSON2CSV(objArray) {
       var value = array[i][index] + "";
       line += '"' + value.replace(/"/g, '""') + '",';
     }
-//        } else {
-//            for (var index in array[i]) {
-//                line += array[i][index] + ',';
-//            }
-//        }
 
     line = line.slice(0, -1);
     str += line + '\r\n';
